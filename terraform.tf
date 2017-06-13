@@ -119,3 +119,7 @@ resource "aws_instance" "docker" {
     }
   }
 }
+
+output "enter_me" {
+  value = "${aws_instance.docker.public_ip}"
+}
