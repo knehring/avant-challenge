@@ -1,0 +1,20 @@
+<h1> All Resumes </h1>
+
+<%= link_to 'Homepage', controller: 'welcome' %>
+<%= link_to 'Create New Resume', new_resume_path %>
+<table class="table table-inverse">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Text</th>
+    </tr>
+  </thead>
+
+  <% @resumes.each do |resume| %>
+    <tr scope="row">
+      <td><%= resume.title %> </td>
+      <td><%= resume.text %> </td>
+      <td><%= link_to 'Show', resume_path(resume) %> </td>
+    </tr>
+  <% end %>
+</table>

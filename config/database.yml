@@ -1,0 +1,18 @@
+default: &default
+
+development: &default
+  adapter: postgresql
+  encoding: unicode
+  database: challenge_development
+  pool: 5
+  host: db
+  username: postgres
+  password:
+
+test:
+  <<: *default
+  database: challenge_test
+
+production:
+  <<: *default
+  database: challenge_prod
